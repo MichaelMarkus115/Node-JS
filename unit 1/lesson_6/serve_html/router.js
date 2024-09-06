@@ -20,7 +20,7 @@ exports.handle = (req, res) => {
     if (routes[req.method][req.url]) {
       routes[req.method][req.url](req, res);
     } else {
-      res.writeHead(httpStatus.NOT_FOUND, htmlContentType);
+      res.writeHead(httpStatus.NOT_FOUND, htmlContentType);//404
       res.end("<h1>No such file exists</h1>");
     }
   } catch (ex) {

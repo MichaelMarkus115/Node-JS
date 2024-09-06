@@ -1,11 +1,11 @@
 "use strict";
 
-const port = 3000,
-    http = require("http"),
-    httpStatus = require("http-status-codes"),
-    router = require("./router"),
-    contentTypes = require("./contentTypes"),
-    utils = require("./utils");
+const port = 3000;
+const http = require("http");
+const httpStatus = require("http-status-codes");
+const router = require("./router");
+const contentTypes = require("./contentTypes");
+const utils = require("./utils");
 
 router.get("/", (req, res) => {
     res.writeHead(httpStatus.OK, contentTypes.html);
@@ -59,4 +59,5 @@ router.get("/confetti_cuisine.js", (req, res) => {
 
 http.createServer(router.handle).listen(port);
 console.log(`The server is listening on port number: ${port}`);
-//utils.getFile function to retrieve the content of the "public/images/image name" file and sends it as the response.
+//utils.getFile function to retrieve the content of the 
+//"public/images/image name" file and sends it as the response.

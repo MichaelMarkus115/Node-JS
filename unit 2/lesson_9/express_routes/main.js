@@ -1,9 +1,9 @@
 "use strict";
 
-const port = 3000,
-    express = require("express"),
-    app = express(),
-    homeController = require("./controllers/homeController");
+const port = 3000;
+const express = require("express");
+const app = express();
+const homeController = require("./controllers/homeController");
 
 app.use(
     express.urlencoded({
