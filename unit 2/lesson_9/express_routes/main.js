@@ -1,16 +1,26 @@
-const port = 3000;
-const express = require("express");
+"use strict";
 
-const app = express();
+const port = 3000,
+    express = require("express"),
+    app = express(),
+    homeController = require("./controllers/homeController");
 
-app.get("/", (req, res) => {
-    console.log(req.params);
-    console.log(req.body);
-    console.log(req.url);
-    console.log(req.query);
-    res.send("Hello, Universe!");
+app.use(
+    express.urlencoded({
+        extended: false
+    })
+);
+app.use(express.json());
+
+app.use((req, res, next) => {
+    console.log(`request made to: ${req.url}`);
+    next();
 });
 
+app.post("/", homeController.postData);
+
+app.get("/items/:vegetable", homeController.sendReqParam);
+
 app.listen(port, () => {
-  console.log(`The Express.js server has started and is listening on port number: ${port}`);
+    console.log(`Server running on port: ${port}`);
 });
