@@ -7,6 +7,8 @@ const homeController = require("./controllers/homeController");
 const layouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const Subscriber = require("./models/subscriber");
+const subscriberController = require("./controllers/subscriberController");
+const subscriber = require("./models/subscriber");
 
 mongoose.connect("mongodb://localhost:27017/recipe_db", {
   useNewUrlParser: true,
@@ -85,19 +87,19 @@ app.use(homeController.logRequestPaths);
 
 //CREATE & SAVE MODELS IN MAIN.JS
 //Option2
-Subscriber.create({
-  name: "Victor Poto",
-  email: "victorseptember@gmail.com",
-})
-  .then((savedDocument) => {
-    console.log(savedDocument);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// Subscriber.create({
+//   name: "Michael van den Berg",
+//   email: "michael@gmail.com",
+// })
+//   .then((savedDocument) => {
+//     console.log(savedDocument);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
 //RUNNING A QUERY
-const query = Subscriber.find({ name: "Victor Poto" }).exec();
+const query = Subscriber.find({ name: "Michael van den Berg" }).exec();
 query
   .then((docs) => {
     console.log(docs); // Handle the results
@@ -114,6 +116,17 @@ app.post("/", (req, res) => {
   console.log(req.query);
   res.send("POST Successful!");
 });
+
+app.get(
+  "/subscribers",
+  subscriberController.getAllSubscribers,
+  (req, res, next) => {
+    console.log(req.data);
+    res.send(req.data);
+  }
+);
+
+
 
 app.use(errorController.logErrors);
 app.use(errorController.respondNoResourceFound);
