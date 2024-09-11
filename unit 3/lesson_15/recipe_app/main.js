@@ -56,17 +56,17 @@ app.use(
 app.use(express.json());
 app.use(homeController.logRequestPaths);
 
-// let subcriber1 = new Subcriber({
+// let subscriber1 = new subscriber({
 //   name: "Mihcael",
 //   email: "michael@gmail.com",
 // });
 
-// subcriber1.save((err, savedDoc) => {
+// subscriber1.save((err, savedDoc) => {
 //   if (err) console.log(err);
 //   console.log(savedDoc);
 // });
 
-// Subcriber.create(
+// subscriber.create(
 //   {
 //     name: "Michael",
 //     email: "michael@gmail.com",
@@ -78,7 +78,7 @@ app.use(homeController.logRequestPaths);
 // );
 
 // //query
-// let myQuery = Subcriber.findOne({
+// let myQuery = subscriber.findOne({
 //   name: "Michael",
 // }).where("email", /michael/);
 // myQuery.exec((error, data) => {
