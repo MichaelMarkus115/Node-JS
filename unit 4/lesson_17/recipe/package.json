@@ -7,14 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js"
   },
-  "author": "Michael van den Berg",
+  "author": "Jada Mathele",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.10",
-    "express": "^5.0.0",
+    "express": "^4.16.3",
     "express-ejs-layouts": "^2.5.0",
     "http-status-codes": "^1.3.0",
-    "mongodb": "^3.6.3",
-    "mongoose": "^8.6.1"
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.4.3"
   }
 }
