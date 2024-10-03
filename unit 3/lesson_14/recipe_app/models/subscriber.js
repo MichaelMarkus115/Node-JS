@@ -8,4 +8,4 @@ const subscriberSchema = mongoose.Schema({
   zipCode: Number,
 });
 
-module.exports = mongoose.model("Subcriber", subscriberSchema);
+module.exports = mongoose.model("Subscriber", subscriberSchema);

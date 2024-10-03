@@ -126,7 +126,7 @@ app.get(
   }
 );
 
-
+app.get("/contact", subscribersController.getSubscriptionPage);
 
 app.use(errorController.logErrors);
 app.use(errorController.respondNoResourceFound);

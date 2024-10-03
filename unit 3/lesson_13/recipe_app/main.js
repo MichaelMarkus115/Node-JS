@@ -13,14 +13,16 @@ const dbName = "recipe_db";
 MongoDB.connect(dbURL, (error, client) => {
   if (error) throw error;
   let db = client.db(dbName);
-  db.collection("contacts")
-  .insert({
-    name: "Test2",
-    email: "2024-september-09@gmail.com"
-  }, (error, db) => {
-    if (error) throw error;
-    console.log(db);
-  });
+  db.collection("contacts").insert(
+    {
+      name: "Alex",
+      email: "Buddy@gmail.com",
+    },
+    (error, db) => {
+      if (error) throw error;
+      console.log(db);
+    }
+  );
   db.collection("contacts")
     .find()
     .toArray((error, data) => {
